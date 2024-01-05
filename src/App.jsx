@@ -1,7 +1,7 @@
-import Header from './components/Header.jsx';
-import Quiz from './components/Quiz.jsx';
+import Header from "./components/Header.jsx";
+import Quiz from "./components/Quiz.jsx";
 
-function App() {
+const App = () => {
   return (
     <>
       <Header />
@@ -10,6 +10,6 @@ function App() {
       </main>
     </>
   );
-}
+};
 
 export default App;

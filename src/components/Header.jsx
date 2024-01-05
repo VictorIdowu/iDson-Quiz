@@ -1,10 +1,11 @@
-import logoImg from '../assets/quiz-logo.png';
+import logoImg from "../assets/quiz-logo.png";
 
-export default function Header() {
+const Header = () => {
   return (
     <header>
       <img src={logoImg} alt="Quiz logo" />
-      <h1>ReactQuiz</h1>
+      <h1>IdsonQuiz</h1>
     </header>
   );
-}
+};
+export default Header;

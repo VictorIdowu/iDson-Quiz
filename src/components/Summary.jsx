@@ -1,7 +1,7 @@
-import quizCompleteImg from '../assets/quiz-complete.png';
-import QUESTIONS from '../questions.js';
+import quizCompleteImg from "../assets/quiz-complete.png";
+import QUESTIONS from "../questions.js";
 
-export default function Summary({ userAnswers }) {
+const Summary = ({ userAnswers }) => {
   const skippedAnswers = userAnswers.filter((answer) => answer === null);
   const correctAnswers = userAnswers.filter(
     (answer, index) => answer === QUESTIONS[index].answers[0]
@@ -35,25 +35,26 @@ export default function Summary({ userAnswers }) {
       </div>
       <ol>
         {userAnswers.map((answer, index) => {
-          let cssClass = 'user-answer';
+          let cssClass = "user-answer";
 
           if (answer === null) {
-            cssClass += ' skipped';
+            cssClass += " skipped";
           } else if (answer === QUESTIONS[index].answers[0]) {
-            cssClass += ' correct';
+            cssClass += " correct";
           } else {
-            cssClass += ' wrong';
+            cssClass += " wrong";
           }
 
           return (
             <li key={index}>
               <h3>{index + 1}</h3>
               <p className="question">{QUESTIONS[index].text}</p>
-              <p className={cssClass}>{answer ?? 'Skipped'}</p>
+              <p className={cssClass}>{answer ?? "Skipped"}</p>
             </li>
           );
         })}
       </ol>
     </div>
   );
-}
+};
+export default Summary;
