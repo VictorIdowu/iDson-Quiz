@@ -28,7 +28,7 @@ const QuestionTimer = ({ timeout, onTimeout, mode }) => {
       id="question-time"
       max={timeout}
       value={remainingTime}
-      className={mode}
+      className={`${mode} w-50% h-2 rounded-3xl bg-[#072a24] m-0`}
     />
   );
 };

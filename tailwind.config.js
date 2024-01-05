@@ -5,6 +5,7 @@ export default {
     extend: {
       fontFamily: {
         Condensed: ["Roboto Condensed"],
+        roboto: ["Roboto, sans-serif"],
       },
     },
   },

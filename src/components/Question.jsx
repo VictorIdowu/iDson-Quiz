@@ -9,7 +9,7 @@ const Question = ({ index, onSelectAnswer, onSkipAnswer }) => {
     selectedAnswer: "",
     isCorrect: null,
   });
-
+  // progress
   let timer = 10000;
 
   if (answer.selectedAnswer) {
@@ -36,7 +36,7 @@ const Question = ({ index, onSelectAnswer, onSkipAnswer }) => {
         onSelectAnswer(answer);
       }, 2000);
     }, 1000);
-  }
+  };
 
   let answerState = "";
 
@@ -54,7 +54,9 @@ const Question = ({ index, onSelectAnswer, onSkipAnswer }) => {
         onTimeout={answer.selectedAnswer === "" ? onSkipAnswer : null}
         mode={answerState}
       />
-      <h2>{QUESTIONS[index].text}</h2>
+      <h2 className="font-roboto text-2xl mt-2 mb-10 text-[#87dfd1]">
+        {QUESTIONS[index].text}
+      </h2>
       <Answers
         answers={QUESTIONS[index].answers}
         selectedAnswer={answer.selectedAnswer}

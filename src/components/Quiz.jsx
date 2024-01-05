@@ -29,7 +29,7 @@ const Quiz = () => {
   }
 
   return (
-    <div id="quiz">
+    <div className="max-w-[50rem] m-auto p-8 bg-gradient-to-b from-[#338375] from-0% to-[#072a24] to-100% rounded-lg shadow-sm text-center">
       <Question
         key={activeQuestionIndex}
         index={activeQuestionIndex}

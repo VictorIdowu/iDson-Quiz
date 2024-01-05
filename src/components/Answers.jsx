@@ -9,7 +9,7 @@ const Answers = ({ answers, selectedAnswer, answerState, onSelect }) => {
   }
 
   return (
-    <ul id="answers">
+    <ul className="m-0 p-0 flex flex-col items-center gap-2">
       {shuffledAnswers.current.map((answer) => {
         const isSelected = selectedAnswer === answer;
         let cssClass = "";
@@ -26,10 +26,10 @@ const Answers = ({ answers, selectedAnswer, answerState, onSelect }) => {
         }
 
         return (
-          <li key={answer} className="answer">
+          <li key={answer} className="answer w-[90%] my-0 mx-auto">
             <button
               onClick={() => onSelect(answer)}
-              className={cssClass}
+              className={`${cssClass}  w-full text-[#3f7a70] inline-block font-Condensed text-[0.9rem] py-4 px-8 border-none bg-gradient-to-b from-[#81f1fb] from-0% to-[#73d2f8] to-100% cursor-pointer transition-all duration-700 ease-in-out rounded-3xl focus:bg-[#3f7a70] hover:bg-[#3f7a70] hover:text-white`}
               disabled={answerState !== ""}
             >
               {answer}
