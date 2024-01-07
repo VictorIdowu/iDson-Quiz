@@ -63,13 +63,13 @@ header h1 {
   color: #a690c5;
 }
 
-/* #question-overview {
+#question-overview {
   font-family: "Roboto Condensed", sans-serif;
   font-size: 0.8rem;
   color: #338375;
   margin: 0;
   text-transform: uppercase;
-} */
+}
 
 #question progress::-webkit-progress-bar {
   background: #338375;
