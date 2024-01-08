@@ -8,10 +8,7 @@ const App = () => {
   return (
     <>
       <Header />
-      <main>
-        {!start && <Landing setStart={setStart} />}
-        {start && <Quiz />}
-      </main>
+      <main>{start ? <Quiz /> : <Landing setStart={setStart} />}</main>
     </>
   );
 };
