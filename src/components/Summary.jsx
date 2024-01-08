@@ -25,37 +25,29 @@ const Summary = ({ userAnswers }) => {
         className="block w-32 h-32 object-contain mb-4 mx-auto p-4 drop-shadow-md border-2 border-solid border-[#3a2353] rounded-[50%] bg-[#c18cfa]"
         alt="Trophy icon"
       />
-      <h2 className="font-roboto text-5xl text-center uppercase text-[#3a2353]">
-        Quiz Completed!
-      </h2>
-      <div
-        id="summary-stats"
-        className="flex gap-8 my-8 mx-auto pb-8 border-b-2 border-solid border-[#594276]"
-      >
-        <p className="flex flex-1 flex-col m-0">
-          <span className="font-Condensed text-3xl text-[#594276]">
-            {skippedAnswersShare}%
-          </span>
-          <span className="font-Condensed uppercase text-sm text-[#30273a] ml-1">
-            skipped
-          </span>
-        </p>
-        <p className="flex flex-1 flex-col m-0">
-          <span className="font-Condensed text-3xl text-[#594276]">
-            {correctAnswersShare}%
-          </span>
-          <span className="font-Condensed uppercase text-sm text-[#30273a] ml-1">
-            answered correctly
-          </span>
-        </p>
-        <p className="flex flex-1 flex-col m-0">
-          <span className=" font-Condensed text-3xl text-[#594276]">
-            {wrongAnswersShare}%
-          </span>
-          <span className="font-Condensed uppercase text-sm text-[#30273a] ml-1">
-            answered incorrectly
-          </span>
-        </p>
+      <div className="w-full flex flex-col items-center">
+        <h2 className="font-roboto text-5xl text-center uppercase text-[#3a2353]">
+          Quiz Completed!
+        </h2>
+        <aside
+          id="summary-stats"
+          className="flex gap-8 my-8 mx-auto pb-8 border-b-2 border-solid border-[#594276]"
+        >
+          {[
+            { answer: skippedAnswersShare, desc: "skipped" },
+            { answer: correctAnswersShare, desc: "answered correctly" },
+            { answer: wrongAnswersShare, desc: "answered incorrectly" },
+          ].map((item, i) => (
+            <p key={i + 1} className="w-fit flex flex-1 flex-col m-0">
+              <span className="font-Condensed text-3xl text-[#594276]">
+                {item.answer}%
+              </span>
+              <span className="font-Condensed uppercase text-sm text-[#30273a] ml-1">
+                {item.desc}
+              </span>
+            </p>
+          ))}
+        </aside>
       </div>
       <ol className="list-none my-8 mx-auto p-0 flex flex-col gap-8 items-center">
         {userAnswers.map((answer, index) => {
